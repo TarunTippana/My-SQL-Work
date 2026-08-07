@@ -149,5 +149,9 @@ SET email = CONCAT(
     '@gmail.com'
 );
 
+select * from emp_hires;
+desc emp_hires;
+
+
 
 
