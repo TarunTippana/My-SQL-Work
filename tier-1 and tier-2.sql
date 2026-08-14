@@ -52,12 +52,21 @@ select avg(salary_usd) from ds_jobs;
 select experience_level, avg(salary_usd) as Avg_sal from ds_jobs group by experience_level having Avg_sal>90000;
 /*
 
-Tier 3: JOINs (2-table and 3-table)
-List job title, company name, and salary for all jobs at companies in the 'Tech' industry.
+Tier 3: JOINs (2-table and 3-table)*/
+
+/*
+List job title, company name, and salary for all jobs at companies in the 'Tech' industry.*/
+
+
+/*
 List job title, country name, and salary for all 'Senior' jobs in 'Germany'.
 Find the average salary per country_name (join ds_jobs + countries).
 Find the number of job postings per industry (join ds_jobs + companies).
-List all companies that have zero job postings. (hint: this needs a LEFT JOIN — new concept, I'll explain below)
+List all companies that have zero job postings. (hint: this needs a LEFT JOIN — new concept, I'll explain below)*/
+
+
+
+/*
 
 Tier 4: Subqueries
 Find all jobs where salary_usd is above the overall average salary (needs a subquery in WHERE).
