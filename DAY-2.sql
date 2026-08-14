@@ -152,6 +152,8 @@ SET email = CONCAT(
 select * from emp_hires;
 desc emp_hires;
 
+select * from emp_hires;
+
 
 
 
