@@ -53,6 +53,7 @@ select experience_level, avg(salary_usd) as Avg_sal from ds_jobs group by experi
 /*
 
 Tier 3: JOINs (2-table and 3-table)*/
+<<<<<<< HEAD
 
 /*
 List job title, company name, and salary for all jobs at companies in the 'Tech' industry.*/
@@ -65,6 +66,52 @@ Find the number of job postings per industry (join ds_jobs + companies).
 List all companies that have zero job postings. (hint: this needs a LEFT JOIN — new concept, I'll explain below)*/
 
 
+=======
+show tables;
+select * from companies;
+select * from ds_jobs;
+select * from countries;
+/*
+List job title, company name, and salary for all jobs at companies in the 'Tech' industry.*/
+select cmp.company_name, ds.salary_usd, cmp.industry
+from companies as cmp inner join ds_jobs as ds
+on cmp.company_id = ds.company_id 
+where industry='Tech';
+
+/*
+List job title, country name, and salary for all 'Senior' jobs in 'Germany'.*/
+select ds.job_title, ct.country_name, ds.salary_usd
+from countries as ct inner join ds_jobs as ds
+on ct.country_id=ds.country_id
+where ct.country_name='Germany' and ds.experience_level='Senior';
+
+/*
+Find the average salary per country_name (join ds_jobs + countries).*/
+select ct.country_name,avg(ds.salary_usd) as Average_salary_per_country
+from countries as ct inner join ds_jobs as ds
+on ct.country_id = ds.country_id
+group by ct.country_name;
+
+
+/*
+Find the number of job postings per industry (join ds_jobs + companies).*/
+select * from countries;
+select * from companies;
+select * from ds_jobs;
+
+select cmp.industry,count(*) as job_postings_per_industry
+from ds_jobs as ds inner join companies as cmp
+on cmp.company_id = ds.company_id
+group by cmp.industry order by job_postings_per_industry desc;
+
+/*
+List all companies that have zero job postings. */
+
+select * 
+from companies as cmp left join ds_jobs as ds
+on cmp.company_id = ds.company_id
+where ds.job_id is null;
+>>>>>>> 7ad438f (tier-3 problems solved.)
 
 /*
 
