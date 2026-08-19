@@ -1,6 +1,6 @@
 -- Q1. Write a query to find all orders with TotalAmount greater than $150, sorted from highest to lowest.
 select * from orders where TotalAmount>150 order by TotalAmount desc;
--- Q2. List all customers who signed up in January 2024 or are from Boston.
+-- Q2. List all customers who signed up in January 2024 or are from Boston. answer this 
 select * from customers where (year(SignupDate)=2024 and monthname(SignupDate)='January') or ( city="Boston");
 -- Q3. Write a query to count how many customers are in each Tier (Gold, Silver, Bronze).
 select Tier,count(*) from customers group by Tier;
