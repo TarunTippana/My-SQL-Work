@@ -1,4 +1,5 @@
 use SqlPractise;
+-- this is sql practise file with databases and tables and data 
 create database jobs;
 use jobs;
 -- ============================================
