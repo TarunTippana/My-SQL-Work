@@ -11,7 +11,7 @@ create table tablename( colname1 datatype1 constraints1,
                         colname3 datatype3 constraints3);
                         */
 
--- student --> id, name, age, gender location
+-- student --> id, name, age, gender location (if you want to create big table add other details like class, contact and mailid )
 
 create table Students(
 student_id int ,
